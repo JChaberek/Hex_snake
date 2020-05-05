@@ -10,6 +10,7 @@ keys = []
 
 # controls q - upper right, a - right, z - bottom right, e - upper left, d - left, c - bottom left
 
+# initialize map
 class snake_map:
     def __init__(self, x, y):
         self.x, self.y = x, y
@@ -68,6 +69,7 @@ class fruit(snake):
         super().__init__(hex_fields, terrain, ftype)
 
 
+# checks if the next hexagonal field is free, locked or you can collect a fruit
 def check_space(map, x, mode, animal):
     if mode == 1:
         x_cords, y_cords = x[1::2], x[0::2]
@@ -86,6 +88,7 @@ def check_space(map, x, mode, animal):
     return True, 0
 
 
+# counts hexagonal fields on the map
 def get_hex(hex, game):
     for i in range(1, height - 1):
         if game.map[i][1] == game.ftype:
@@ -117,6 +120,7 @@ def move(game, animal, direction, hex):
         new_x, new_y = animal[0].x + 2, animal[0].y + 2
     is_ok, is_fruit = check_space(game.map, hex, 0, [new_x, new_y])
 
+    # if next field is empty or you can get a fruit
     if is_ok:
         animal_copy = []
         if is_fruit == 0:
@@ -170,6 +174,7 @@ def main_game():
     listener = keyboard.Listener(on_press=on_press)
     listener.start()
 
+    # main game loop
     while game_loop:
         if not spawn_fruit:
             while not spawn_fruit:
