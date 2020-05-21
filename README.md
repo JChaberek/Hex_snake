@@ -1,2 +1,2 @@
 # Hex_snake
-Snake game in played on hexagonal grid
+Snake game played on hexagonal grid
