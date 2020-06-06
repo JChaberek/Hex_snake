@@ -157,7 +157,7 @@ def move_anim(p1_can_play, p2_can_play, spawn_fruit, animal1, animal2, points1, 
 
     elif hot_seat is 0 and against_ai:
         if len(p1_keys) > 0:
-            key = calculate_next_move(game, animal2, fruit_on_map, hexes)
+            key = calculate_next_move(game, animal2, fruit_on_map, hexes, p2_controls=["t", "g", "b", "u", "j", "m"])
             p2_keys.append(key)
             if p1_can_play:
                 p1_can_play, spawn_fruit1 = move(game, animal1, p1_keys[-1], hexes)
