@@ -1,5 +1,5 @@
 # Hex_snake
-Snake game in console played on hexagonal grid
+Snake game console played on hexagonal grid
 
 ![snake](https://user-images.githubusercontent.com/64171383/83952306-51122500-a838-11ea-8f91-7bb47684f54c.gif)
 
